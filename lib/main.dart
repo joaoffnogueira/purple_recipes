@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:purple_recipes/screens/categories_meals_screen.dart';
 import 'package:purple_recipes/screens/categories_screen.dart';
+import 'package:purple_recipes/utils/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +30,10 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      home: const CategoriesScreen(),
+      routes: {
+        AppRoutes.HOME: (ctx) => CategoriesScreen(),
+        AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
+      },
     );
   }
 }
