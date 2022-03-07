@@ -15,6 +15,18 @@ class MyApp extends StatelessWidget {
       title: 'Purple Recipes',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
+        fontFamily: 'RaleWay',
+        canvasColor: Colors.purple[50],
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline6: TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+              ),
+              button: TextStyle(
+                color: Colors.white,
+              ),
+            ),
       ),
       home: const CategoriesScreen(),
     );
