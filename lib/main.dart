@@ -7,22 +7,32 @@ import 'package:purple_recipes/screens/tabs_screen.dart';
 import 'package:purple_recipes/utils/app_routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  final ThemeData tema = ThemeData();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Purple Recipes',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        fontFamily: 'RaleWay',
+      theme: tema.copyWith(
+        colorScheme: tema.colorScheme.copyWith(
+          primary: Colors.deepPurple,
+          secondary: Colors.deepPurpleAccent,
+        ),
         canvasColor: Colors.purple[50],
         textTheme: ThemeData.light().textTheme.copyWith(
+              bodyText1: TextStyle(
+                fontFamily: 'RaleWay',
+              ),
+              bodyText2: TextStyle(
+                fontFamily: 'RaleWay',
+              ),
               headline6: TextStyle(
                 fontSize: 20,
                 fontFamily: 'RobotoCondensed',
