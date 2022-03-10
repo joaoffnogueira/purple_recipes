@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:purple_recipes/components/meal_item.dart';
+import '../models/meal.dart';
 
 class FavoriteScreen extends StatelessWidget {
-  const FavoriteScreen({Key? key}) : super(key: key);
+  final List<Meal> favoriteMeals;
+
+  const FavoriteScreen({
+    required this.favoriteMeals,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Minhas receitas favoritas'),
-    );
+    if (favoriteMeals.isEmpty) {
+      return const Center(
+        child: Text('Nenhuma refeição foi marcada como favorita, ainda...'),
+      );
+    } else {
+      return ListView.builder(
+        itemBuilder: (ctx, index) {
+          return MealItem(meal: favoriteMeals[index]);
+        },
+        itemCount: favoriteMeals.length,
+      );
+    }
   }
 }

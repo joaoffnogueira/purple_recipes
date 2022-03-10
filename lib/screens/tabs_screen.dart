@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:purple_recipes/components/main_drawer.dart';
+import 'package:purple_recipes/models/meal.dart';
 import 'package:purple_recipes/screens/categories_screen.dart';
 import 'package:purple_recipes/screens/favorite_screen.dart';
 
 class TabScreen extends StatefulWidget {
-  const TabScreen({Key? key}) : super(key: key);
+  final List<Meal> favoriteMeals;
+
+  const TabScreen({
+    required this.favoriteMeals,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<TabScreen> createState() => _TabScreenState();
@@ -13,10 +19,18 @@ class TabScreen extends StatefulWidget {
 class _TabScreenState extends State<TabScreen> {
   int _selectedScreenIndex = 0;
 
-  final List<Widget> _screens = [
-    const CategoriesScreen(),
-    const FavoriteScreen(),
-  ];
+  late List<Widget> _screens;
+
+  @override
+  void initState() {
+    super.initState();
+    _screens = [
+      const CategoriesScreen(),
+      FavoriteScreen(
+        favoriteMeals: widget.favoriteMeals,
+      ),
+    ];
+  }
 
   final List<String> _tabTitles = [
     'Categorias',
