@@ -30,14 +30,14 @@ class MainDrawer extends StatelessWidget {
           height: 120,
           width: double.infinity,
           padding: const EdgeInsets.all(20),
-          color: const ColorScheme.light().secondary,
+          color: Theme.of(context).colorScheme.secondary,
           alignment: Alignment.bottomRight,
           child: Text(
             'Vamos cozinhar?',
             style: TextStyle(
               fontWeight: FontWeight.w900,
               fontSize: 30,
-              color: const ColorScheme.light().primary,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
         ),

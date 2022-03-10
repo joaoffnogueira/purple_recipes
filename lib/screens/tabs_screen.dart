@@ -53,19 +53,19 @@ class _TabScreenState extends State<TabScreen> {
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
           onTap: _selectScreen,
-          backgroundColor: const ColorScheme.light().primary,
+          backgroundColor: Theme.of(context).colorScheme.primary,
           unselectedItemColor: Colors.white,
-          selectedItemColor: const ColorScheme.light().secondary,
+          selectedItemColor: Theme.of(context).colorScheme.secondary,
           currentIndex: _selectedScreenIndex,
           type: BottomNavigationBarType.shifting,
           items: [
             BottomNavigationBarItem(
-              backgroundColor: const ColorScheme.light().primary,
+              backgroundColor: Theme.of(context).colorScheme.primary,
               icon: const Icon(Icons.category),
               label: 'Categorias',
             ),
             BottomNavigationBarItem(
-              backgroundColor: const ColorScheme.light().primary,
+              backgroundColor: Theme.of(context).colorScheme.primary,
               icon: const Icon(Icons.star),
               label: 'Categorias',
             ),
