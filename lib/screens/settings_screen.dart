@@ -3,26 +3,42 @@ import 'package:purple_recipes/components/main_drawer.dart';
 import 'package:purple_recipes/models/settings.dart';
 
 class StettingsScreen extends StatefulWidget {
-  const StettingsScreen({Key? key}) : super(key: key);
+  final Function(Settings) onSettingsChanged;
+
+  final Settings settings;
+
+  const StettingsScreen({
+    required this.settings,
+    required this.onSettingsChanged,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<StettingsScreen> createState() => _StettingsScreenState();
 }
 
 class _StettingsScreenState extends State<StettingsScreen> {
-  var settings = Settings();
+  late Settings settings;
+  @override
+  void initState() {
+    super.initState();
+    settings = widget.settings;
+  }
 
   Widget _createSwitch(
     String title,
     String subtitle,
     bool value,
-    Function onChanged,
+    Function(bool) onChanged,
   ) {
     return SwitchListTile.adaptive(
       title: Text(title),
       subtitle: Text(subtitle),
       value: value,
-      onChanged: onChanged(),
+      onChanged: (value) {
+        onChanged(value);
+        widget.onSettingsChanged(settings);
+      },
     );
   }
 
@@ -30,13 +46,13 @@ class _StettingsScreenState extends State<StettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Configurações'),
+        title: const Text('Configurações'),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Text(
               'Configurações',
               style: Theme.of(context).textTheme.headline6,
