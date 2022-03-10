@@ -6,7 +6,7 @@ class MealDetailScreen extends StatelessWidget {
 
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         title,
         style: Theme.of(context).textTheme.headline6,
@@ -21,8 +21,8 @@ class MealDetailScreen extends StatelessWidget {
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10),
       ),
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       height: 200,
       width: 330,
       child: child,
@@ -35,11 +35,11 @@ class MealDetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('meal.title'),
+        title: const Text('meal.title'),
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          Container(
+          SizedBox(
             height: 300,
             width: double.infinity,
             child: Image.network(
@@ -55,7 +55,7 @@ class MealDetailScreen extends StatelessWidget {
                 return Card(
                   color: const ColorScheme.light().secondary,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       vertical: 5,
                       horizontal: 10,
                     ),
@@ -82,7 +82,7 @@ class MealDetailScreen extends StatelessWidget {
                       ),
                       title: Text(meal.steps[index]),
                     ),
-                    Divider(),
+                    const Divider(),
                   ],
                 );
               },
@@ -91,7 +91,7 @@ class MealDetailScreen extends StatelessWidget {
         ]),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.star),
+        child: const Icon(Icons.star),
         onPressed: () {
           Navigator.of(context).pop(meal);
         },

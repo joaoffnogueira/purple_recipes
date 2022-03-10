@@ -12,7 +12,7 @@ class MainDrawer extends StatelessWidget {
       ),
       title: Text(
         label,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: 'RobotoCondensed',
           fontSize: 24,
           fontWeight: FontWeight.bold,
@@ -29,15 +29,15 @@ class MainDrawer extends StatelessWidget {
         Container(
           height: 120,
           width: double.infinity,
-          padding: EdgeInsets.all(20),
-          color: ColorScheme.light().secondary,
+          padding: const EdgeInsets.all(20),
+          color: const ColorScheme.light().secondary,
           alignment: Alignment.bottomRight,
           child: Text(
             'Vamos cozinhar?',
             style: TextStyle(
               fontWeight: FontWeight.w900,
               fontSize: 30,
-              color: ColorScheme.light().primary,
+              color: const ColorScheme.light().primary,
             ),
           ),
         ),

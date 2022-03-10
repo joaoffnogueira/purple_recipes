@@ -14,8 +14,8 @@ class _TabScreenState extends State<TabScreen> {
   int _selectedScreenIndex = 0;
 
   final List<Widget> _screens = [
-    CategoriesScreen(),
-    FavoriteScreen(),
+    const CategoriesScreen(),
+    const FavoriteScreen(),
   ];
 
   final List<String> _tabTitles = [
@@ -35,24 +35,24 @@ class _TabScreenState extends State<TabScreen> {
       appBar: AppBar(
         title: Text(_tabTitles[_selectedScreenIndex]),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
           onTap: _selectScreen,
           backgroundColor: const ColorScheme.light().primary,
           unselectedItemColor: Colors.white,
-          selectedItemColor: ColorScheme.light().secondary,
+          selectedItemColor: const ColorScheme.light().secondary,
           currentIndex: _selectedScreenIndex,
           type: BottomNavigationBarType.shifting,
           items: [
             BottomNavigationBarItem(
               backgroundColor: const ColorScheme.light().primary,
-              icon: Icon(Icons.category),
+              icon: const Icon(Icons.category),
               label: 'Categorias',
             ),
             BottomNavigationBarItem(
               backgroundColor: const ColorScheme.light().primary,
-              icon: Icon(Icons.star),
+              icon: const Icon(Icons.star),
               label: 'Categorias',
             ),
           ]),
