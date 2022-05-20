@@ -14,7 +14,7 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     if (favoriteMeals.isEmpty) {
       return const Center(
-        child: Text('Nenhuma refeição foi marcada como favorita, ainda...'),
+        child: Text('No meal has been marked as a favorite yet...'),
       );
     } else {
       return ListView.builder(

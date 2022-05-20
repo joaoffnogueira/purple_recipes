@@ -42,7 +42,7 @@ class MealDetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('meal.title'),
+        title: Text(meal.title),
       ),
       body: SingleChildScrollView(
         child: Column(children: [
@@ -76,7 +76,7 @@ class MealDetailScreen extends StatelessWidget {
               },
             ),
           ),
-          _createSectionTitle(context, 'Instruções'),
+          _createSectionTitle(context, 'Instructions'),
           _createSectionContainer(
             ListView.builder(
               itemCount: meal.steps.length,

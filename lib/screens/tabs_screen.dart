@@ -33,8 +33,8 @@ class _TabScreenState extends State<TabScreen> {
   }
 
   final List<String> _tabTitles = [
-    'Categorias',
-    'Favoritos',
+    'Categories',
+    'Favorites',
   ];
 
   _selectScreen(int index) {
@@ -49,7 +49,7 @@ class _TabScreenState extends State<TabScreen> {
       appBar: AppBar(
         title: Text(_tabTitles[_selectedScreenIndex]),
       ),
-      drawer: const MainDrawer(),
+      drawer: MainDrawer(),
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
           onTap: _selectScreen,
@@ -61,12 +61,12 @@ class _TabScreenState extends State<TabScreen> {
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).colorScheme.primary,
               icon: const Icon(Icons.category),
-              label: 'Categorias',
+              label: 'Categories',
             ),
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).colorScheme.primary,
               icon: const Icon(Icons.star),
-              label: 'Categorias',
+              label: 'Favorites',
             ),
           ]),
     );

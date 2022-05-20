@@ -46,15 +46,15 @@ class _StettingsScreenState extends State<StettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Configurações'),
+        title: const Text('Configurations'),
       ),
-      drawer: const MainDrawer(),
+      drawer: MainDrawer(),
       body: Column(
         children: [
           Container(
             padding: const EdgeInsets.all(20),
             child: Text(
-              'Configurações',
+              'Configurations',
               style: Theme.of(context).textTheme.headline6,
             ),
           ),
@@ -62,26 +62,26 @@ class _StettingsScreenState extends State<StettingsScreen> {
             child: ListView(
               children: [
                 _createSwitch(
-                  'Sem Glutén',
-                  'Só exibe receitas sem glutén',
+                  'Gluten free',
+                  'Only displays gluten-free recipes',
                   settings.isGlutenFree,
                   (value) => setState(() => settings.isGlutenFree = value),
                 ),
                 _createSwitch(
-                  'Sem Lactose',
-                  'Só exibe receitas sem lactose',
+                  'Lactose Free',
+                  'Only displays lactose-free recipes',
                   settings.isLactoseFree,
                   (value) => setState(() => settings.isLactoseFree = value),
                 ),
                 _createSwitch(
-                  'Vegana',
-                  'Só exibe receitas veganas',
+                  'Vegan',
+                  'Only displays vegan recipes',
                   settings.isVegan,
                   (value) => setState(() => settings.isVegan = value),
                 ),
                 _createSwitch(
-                  'Vegetariana',
-                  'Só exibe receitas vegetarianas',
+                  'Vegetarian',
+                  'Only displays vegetarian recipes',
                   settings.isVegetarian,
                   (value) => setState(() => settings.isVegetarian = value),
                 ),
