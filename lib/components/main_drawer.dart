@@ -2,25 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:purple_recipes/utils/app_routes.dart';
 
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({Key? key}) : super(key: key);
-
-  Widget _createItem(IconData icon, String label, Function onTap) {
-    return ListTile(
-      leading: Icon(
-        icon,
-        size: 26,
-      ),
-      title: Text(
-        label,
-        style: const TextStyle(
-          fontFamily: 'RobotoCondensed',
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      onTap: onTap(),
-    );
-  }
+  MainDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,28 +15,44 @@ class MainDrawer extends StatelessWidget {
           color: Theme.of(context).colorScheme.secondary,
           alignment: Alignment.bottomRight,
           child: Text(
-            'Vamos cozinhar?',
+            'Let\'s Cook?',
             style: TextStyle(
               fontWeight: FontWeight.w900,
               fontSize: 30,
-              color: Theme.of(context).colorScheme.primary,
+              color: Colors.white,
             ),
           ),
         ),
-        _createItem(
-          Icons.restaurant,
-          'Receitas',
-          () {
-            Navigator.of(context).pushReplacementNamed(AppRoutes.HOME);
-          },
-        ),
-        _createItem(
-          Icons.settings,
-          'Configurações',
-          () {
-            Navigator.of(context).pushReplacementNamed(AppRoutes.SETTINGS);
-          },
-        )
+        ListTile(
+            leading: Icon(
+              Icons.restaurant,
+              size: 26,
+            ),
+            title: Text(
+              'Recipes',
+              style: TextStyle(
+                fontFamily: 'RobotoCondensed',
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(AppRoutes.HOME)),
+        ListTile(
+            leading: Icon(
+              Icons.settings,
+              size: 26,
+            ),
+            title: Text(
+              'Configurations',
+              style: TextStyle(
+                fontFamily: 'RobotoCondensed',
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(AppRoutes.SETTINGS)),
       ]),
     );
   }
